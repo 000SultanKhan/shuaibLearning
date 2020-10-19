@@ -1,0 +1,40 @@
+<div class='container-fluid'>
+  <div class='col-sm-12' style="padding: 2px;">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <img [src]="images[0]" class="img-carousel">
+        <div class="carousel-caption">
+          <h3 style="color: springgreen;"> {{ imgText[0] }} </h3>
+        </div>
+      </ng-template>
+
+      <ng-template ngbSlide>
+        <img [src]="images[1]" [alt]="imgText[1]" class="img-carousel">
+        <div class="carousel-caption">
+          <h3 style="color: #3f51b5;"> {{ imgText[1] }} </h3>
+        </div>
+      </ng-template>
+
+      <ng-template ngbSlide>
+        <img [src]="images[2]" [alt]="imgText[2]" class="img-carousel">
+        <div class="carousel-caption">
+          <h3 style="color: orangered;"> {{ imgText[2] }} </h3>
+        </div>
+      </ng-template>
+
+      <ng-template ngbSlide>
+        <img [src]="images[3]" [alt]="imgText[3]" class="img-carousel">
+        <div class="carousel-caption">
+          <h3 style="color: #3f51b5;"> {{ imgText[3] }} </h3>
+        </div>
+      </ng-template>
+
+      <ng-template ngbSlide>
+        <img [src]="images[4]" [alt]="imgText[4]" class="img-carousel">
+        <div class="carousel-caption">
+          <h3 style="color: orange;"> {{ imgText[4] }} </h3>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<div>
+
+
+    <h1 class="heading">COUNTER Reports</h1>
+    <h3>This section allows you to view and download COUNTER 5 reports.</h3>
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        Report Type <span class="required" matTooltip="This Field is required">*</span>:
+        <mat-form-field style="width: 35%" appearance="outline">
+            <mat-select placeholder="Select Metric Type" *ngIf="reports" [(ngModel)]="selectedReport"
+                (selectionChange)="onSelectReport(selectedReport)">
+                <mat-option *ngFor="let report of reports" [value]="report.report">
+                    {{report.report}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        From <span class="required" matTooltip="This Field is required">*</span>:
+        <mat-form-field appearance="outline">
+            <mat-label>From date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        To <span class="required" matTooltip="This Field is required">*</span>:
+        <mat-form-field appearance="outline">
+            <mat-label>From date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+    </div>
+
+
+    <div class="col-lg-6 col-md6 col-sm-12">
+        Metric Type <i class="fa fa-info-circle" matTooltip="please select the  Metric Type value "></i>:
+        <mat-form-field style="width: 35%" appearance="outline">
+            <mat-select placeholder="Select Metric Type" *ngIf="metrics" [(ngModel)]="selectedMetric"
+                (selectionChange)="onSelectMetric($event.value)">
+                <mat-option *ngFor="let metric of metrics" [value]="metric.metric_type">
+                    {{metric.metric_type}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+
+    <div class="col-lg-6 col-md6 col-sm-12">
+        Data Type <i class="fa fa-info-circle" matTooltip="please select the Data Type value "></i>:
+        <mat-form-field style="width: 25%" appearance="outline">
+            <mat-select placeholder="Select Data Type" *ngIf="datatypes" [(ngModel)]="selectedDatatype"
+                (selectionChange)="onSelectDatatype($event.value)">
+                <mat-option *ngFor="let datatype of datatypes" [value]="datatype.data_type">
+                    {{datatype.data_type}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+
+
+    <div class="col-lg-6 col-md6 col-sm-12">
+        Access Type <i class="fa fa-info-circle" matTooltip="please select the Access Type value "></i>:
+        <mat-form-field style="width: 25%" appearance="outline">
+            <mat-select placeholder="Select Access Type" *ngIf="accesstypes" [(ngModel)]="selectedAccesstype"
+                (selectionChange)="onSelectAccesstype($event.value)">
+                <mat-option *ngFor="let accesstype of accesstypes" [value]="accesstype.access_type">
+                    {{accesstype.access_type}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+    <div class="col-lg-6 col-md6 col-sm-12">
+        Access Method <i class="fa fa-info-circle" matTooltip="please select theAccess Method value "></i>:
+        <mat-form-field style="width: 25%" appearance="outline">
+            <mat-select placeholder="Select Access Method" *ngIf="accessmethods" [(ngModel)]="selectedAccessmethod"
+                (selectionChange)="onSelectAccessmethod($event.value)">
+                <mat-option *ngFor="let accessmethod of accessmethods" [value]="accessmethod.access_method">
+                    {{accessmethod.access_method}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+    
+    <mat-form-field style="width: 35%" appearance="outline">
+        <mat-label>Toppings</mat-label>
+        <mat-select [formControl]="toppings" multiple>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br>
+
+
+    <button class="bt" mat-raised-button disabled> <i class="fa fa-refresh"></i> Reset</button>&nbsp;
+    <button mat-raised-button color="primary"> <i class="fa fa-file-text"></i> CSV</button>&nbsp;
+    <button mat-raised-button color="primary"> <i class="fa fa-file-text-o"></i> TSV</button>&nbsp;
+    <button mat-raised-button color="primary"> <i class="fa fa-file"></i> XLS</button>&nbsp;
+    <button mat-raised-button color="primary"> <i class="fa fa-file-pdf-o"></i> PDF</button>&nbsp;
+    <button mat-raised-button color="primary"> <i class="material-icons">file_download</i>HTML</button>&nbsp;
+    <button mat-raised-button color="primary"> <i class="fa fa-envelope"></i> E-Mail</button>&nbsp;
+    <button mat-raised-button color="primary"> <i class="fa fa-search"></i> Preview Report</button>&nbsp;
+
+
+
+
+
+
+
+</div>

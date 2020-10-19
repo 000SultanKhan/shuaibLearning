@@ -1,0 +1,13 @@
+.example-card {
+    max-width: 300px;
+    margin: 20px;
+  }
+  
+
+  .feature_title
+{
+	position: relative;
+	font-size: 30px;
+	margin-top: 23px;
+    font-family: fantasy;
+}
